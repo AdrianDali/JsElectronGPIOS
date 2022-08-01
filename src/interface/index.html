@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electron y MYSQL</title>
+    <link rel="stylesheet" href="./bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="./app.css" />
+  </head>
+  <body>
+    <div id="sidemenu" class="menu-collapsed">
+      <div id="header">
+        <div id="title"><span> Vida MRR</span></div>
+        <div id="menu-btn">
+          <div class="btn-hamburger"></div>
+          <div class="btn-hamburger"></div>
+          <div class="btn-hamburger"></div>
+        </div>
+      </div>
+
+      <div id="profile">
+        <div id="photo"><img src="photo.jpg" alt="" /></div>
+        <div id="name"><span>Marcos Rivas</span></div>
+      </div>
+
+      <div id="menu-items">
+        <div class="item">
+          <a href="#">
+            <div class="icon"><img src="#" alt="" /></div>
+            <div class="title"><span>Cloud Service</span></div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <script>
+      const btn = document.querySelector("#menu-btn");
+      const menu = document.querySelector("#sidemenu");
+      btn.addEventListener("click", (e) => {
+        menu.classList.toggle("menu-expanded");
+        menu.classList.toggle("menu-collapsed");
+
+        document.querySelector("body").classList.toggle("body-expanded");
+      });
+    </script>
+
+    <main class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 p-4 my-auto">
+          <form class="card card-body" id="productForm">
+            <div class="form-group">
+              <input
+                type="text"
+                id="name"
+                class="form-control"
+                placeholder="Product's name"
+                autofocus
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="number"
+                id="price"
+                class="form-control"
+                placeholder="Product's price"
+                step="any"
+              />
+            </div>
+            <div class="form-group">
+              <textarea
+                id="description"
+                class="form-control"
+                placeholder="Product's description"
+                rows="3"
+              >
+              </textarea>
+            </div>
+
+            <button class="btn btn-primary">Save</button>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <div id="products"></div>
+        </div>
+      </div>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>
